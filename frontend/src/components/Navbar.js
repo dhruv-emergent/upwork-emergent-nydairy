@@ -20,9 +20,6 @@ const Navbar = () => {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    } else {
-      // Navigate to page
-      window.location.href = href;
     }
     setIsOpen(false);
   };
