@@ -257,9 +257,13 @@ const HomePage = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="blog-card bg-white rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=250&fit=crop" 
+                src="https://picsum.photos/400/250?random=30" 
                 alt="Fresh farm milk being poured"
                 className="w-full h-48 object-cover"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = '<div class="w-full h-48 bg-green-100 flex items-center justify-center"><div class="text-center text-green-600"><div class="text-4xl mb-2">🥛</div><p class="font-semibold">Farm Fresh Milk</p></div></div>';
+                }}
               />
               <div className="p-6">
                 <h3 className="font-playfair text-xl font-semibold text-green-800 mb-3">
@@ -276,9 +280,13 @@ const HomePage = () => {
 
             <div className="blog-card bg-white rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=400&h=250&fit=crop" 
+                src="https://picsum.photos/400/250?random=31" 
                 alt="Sustainable dairy farm with renewable energy"
                 className="w-full h-48 object-cover"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = '<div class="w-full h-48 bg-green-100 flex items-center justify-center"><div class="text-center text-green-600"><div class="text-4xl mb-2">🌱</div><p class="font-semibold">Sustainable Farming</p></div></div>';
+                }}
               />
               <div className="p-6">
                 <h3 className="font-playfair text-xl font-semibold text-green-800 mb-3">
@@ -295,9 +303,13 @@ const HomePage = () => {
 
             <div className="blog-card bg-white rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=250&fit=crop" 
+                src="https://picsum.photos/400/250?random=32" 
                 alt="Artisan cheese wheels aging in cave"
                 className="w-full h-48 object-cover"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = '<div class="w-full h-48 bg-green-100 flex items-center justify-center"><div class="text-center text-green-600"><div class="text-4xl mb-2">🧀</div><p class="font-semibold">Artisan Cheese</p></div></div>';
+                }}
               />
               <div className="p-6">
                 <h3 className="font-playfair text-xl font-semibold text-green-800 mb-3">
