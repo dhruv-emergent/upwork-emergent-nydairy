@@ -75,6 +75,9 @@ const BlogPost = () => {
       .join('\n');
   };
 
+  const [isShared, setIsShared] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+
   const handleShare = async () => {
     if (navigator.share) {
       try {
@@ -83,6 +86,8 @@ const BlogPost = () => {
           text: blog.excerpt,
           url: window.location.href,
         });
+        setIsShared(true);
+        setTimeout(() => setIsShared(false), 2000);
       } catch (err) {
         console.error('Error sharing:', err);
       }
@@ -90,12 +95,45 @@ const BlogPost = () => {
       // Fallback: copy to clipboard
       try {
         await navigator.clipboard.writeText(window.location.href);
-        alert('Link copied to clipboard!');
+        setIsShared(true);
+        setTimeout(() => setIsShared(false), 2000);
       } catch (err) {
         console.error('Error copying to clipboard:', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = window.location.href;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        setIsShared(true);
+        setTimeout(() => setIsShared(false), 2000);
       }
     }
   };
+
+  const handleSave = () => {
+    // Save to localStorage for demo purposes
+    const savedBlogs = JSON.parse(localStorage.getItem('savedBlogs') || '[]');
+    if (!savedBlogs.includes(blog.id)) {
+      savedBlogs.push(blog.id);
+      localStorage.setItem('savedBlogs', JSON.stringify(savedBlogs));
+      setIsSaved(true);
+    } else {
+      // Remove from saved
+      const updatedSaved = savedBlogs.filter(id => id !== blog.id);
+      localStorage.setItem('savedBlogs', JSON.stringify(updatedSaved));
+      setIsSaved(false);
+    }
+  };
+
+  // Check if blog is already saved on component mount
+  useState(() => {
+    if (blog) {
+      const savedBlogs = JSON.parse(localStorage.getItem('savedBlogs') || '[]');
+      setIsSaved(savedBlogs.includes(blog.id));
+    }
+  }, [blog]);
 
   if (loading) {
     return (
