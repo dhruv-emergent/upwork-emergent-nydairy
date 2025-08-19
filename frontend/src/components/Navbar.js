@@ -51,13 +51,23 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                className={`nav-link ${isActive(item.href) ? 'active' : ''}`}
-              >
-                {item.name}
-              </button>
+              item.href.startsWith('#') ? (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className={`nav-link ${isActive(item.href) ? 'active' : ''}`}
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`nav-link ${isActive(item.href) ? 'active' : ''}`}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
             <button onClick={handleVisitStore} className="btn-primary">
               Visit Farm Store
