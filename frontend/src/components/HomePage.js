@@ -35,7 +35,8 @@ const HomePage = () => {
   ];
 
   const handleVisitFarmStore = () => {
-    window.open('https://maps.google.com/search/dairy+farm+store+cooperstown+ny', '_blank');
+    // Use a more direct approach that won't be blocked by popup blockers
+    window.location.href = 'https://www.google.com/maps/search/?api=1&query=New+York+Dairy+Farm+Store+Cooperstown+NY';
   };
 
   const handleGetDirections = () => {
