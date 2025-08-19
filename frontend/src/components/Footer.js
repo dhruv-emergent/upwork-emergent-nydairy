@@ -172,16 +172,22 @@ const Footer = () => {
             <p className="text-green-200 mb-6">
               Get farm updates, seasonal recipes, and exclusive offers.
             </p>
-            <div className="flex">
+            <form onSubmit={handleNewsletterSignup} className="flex">
               <input 
                 type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
+                required
                 className="flex-1 px-4 py-3 bg-green-800 border border-green-700 rounded-l-lg text-white placeholder-green-300 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
-              <button className="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-r-lg font-semibold transition-colors">
-                Subscribe
+              <button 
+                type="submit"
+                className="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-r-lg font-semibold transition-colors whitespace-nowrap"
+              >
+                {subscribed ? '✓ Subscribed!' : 'Subscribe'}
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
