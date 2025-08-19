@@ -65,7 +65,7 @@ def read_blog_files():
             "excerpt": "Discover the remarkable differences in taste, nutrition, and quality that come from choosing farm-fresh milk produced right here in New York State.",
             "reading_time": "8 min read",
             "publish_date": "March 15, 2024",
-            "image_url": "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=800&h=600&fit=crop",
+            "image_url": "https://picsum.photos/800/600?random=101",
             "tags": ["Farm Fresh", "Nutrition", "Local Dairy", "Health Benefits"],
             "filename": "blog_1_farm_fresh_benefits.md"
         },
@@ -75,7 +75,7 @@ def read_blog_files():
             "excerpt": "Learn how modern New York dairy farmers are leading the charge in agricultural sustainability through regenerative practices that benefit both the environment and our communities.",
             "reading_time": "9 min read", 
             "publish_date": "March 12, 2024",
-            "image_url": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&h=600&fit=crop",
+            "image_url": "https://picsum.photos/800/600?random=102",
             "tags": ["Sustainability", "Environment", "Regenerative Agriculture", "Climate"],
             "filename": "blog_2_sustainable_farming.md"
         },
@@ -85,7 +85,7 @@ def read_blog_files():
             "excerpt": "Explore the rich heritage and exciting renaissance of artisan cheese making in New York State, where traditional techniques meet modern innovation.",
             "reading_time": "10 min read",
             "publish_date": "March 10, 2024", 
-            "image_url": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=800&h=600&fit=crop",
+            "image_url": "https://picsum.photos/800/600?random=103",
             "tags": ["Artisan Cheese", "Craftsmanship", "Tradition", "Innovation"],
             "filename": "blog_3_artisan_cheese_making.md"
         },
@@ -95,7 +95,7 @@ def read_blog_files():
             "excerpt": "Discover the scientifically-proven health advantages of consuming fresh, local dairy products from grass-fed cows in New York State.",
             "reading_time": "9 min read",
             "publish_date": "March 8, 2024",
-            "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=800&h=600&fit=crop",
+            "image_url": "https://picsum.photos/800/600?random=104",
             "tags": ["Health Benefits", "Nutrition Science", "Grass-Fed", "Wellness"],
             "filename": "blog_4_local_dairy_health_benefits.md"
         },
@@ -105,7 +105,7 @@ def read_blog_files():
             "excerpt": "Discover delicious recipes that pair New York's seasonal bounty with fresh dairy products, celebrating the natural rhythms of farm life throughout the year.",
             "reading_time": "11 min read",
             "publish_date": "March 5, 2024",
-            "image_url": "https://images.unsplash.com/photo-1549221987-b352cac6d5b4?w=800&h=600&fit=crop",
+            "image_url": "https://picsum.photos/800/600?random=105",
             "tags": ["Recipes", "Seasonal Cooking", "Farm to Table", "Comfort Food"],
             "filename": "blog_5_seasonal_dairy_recipes.md"
         }
