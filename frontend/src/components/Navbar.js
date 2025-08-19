@@ -6,12 +6,23 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Our Story', href: '#about' },
-    { name: 'Blog', href: '/blogs' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  const handleNavClick = (href) => {
+    if (href.startsWith('#')) {
+      // Scroll to section
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to page
+      window.location.href = href;
+    }
+    setIsOpen(false);
+  };
+
+  const handleVisitStore = () => {
+    window.open('https://maps.google.com/search/dairy+farm+store+cooperstown+ny', '_blank');
+  };
 
   const isActive = (href) => {
     if (href === '/') return location.pathname === '/';
