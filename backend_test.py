@@ -111,8 +111,15 @@ class DairyAPITester:
             if blog['id'] not in self.expected_blog_ids:
                 print(f"   Unexpected blog ID: {blog['id']}")
                 return False
-                
-            print(f"   Blog {i+1}: {blog['title'][:50]}...")
+            
+            # Check image URL in summary
+            if 'image_url' in blog and blog['image_url']:
+                if not blog['image_url'].startswith('https://picsum.photos/'):
+                    print(f"   Blog {i+1} has non-Picsum image URL: {blog['image_url']}")
+                    return False
+                print(f"   Blog {i+1}: {blog['title'][:50]}... [Image: ✅]")
+            else:
+                print(f"   Blog {i+1}: {blog['title'][:50]}... [Image: ❌ Missing]")
 
         return True
 
