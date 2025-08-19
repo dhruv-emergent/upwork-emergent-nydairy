@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   MapPinIcon, 
@@ -9,6 +9,25 @@ import {
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleNewsletterSignup = (e) => {
+    e.preventDefault();
+    if (email) {
+      // In a real app, this would send to your email service
+      setSubscribed(true);
+      setEmail('');
+      setTimeout(() => setSubscribed(false), 3000);
+    }
+  };
+
+  const socialLinks = [
+    { name: 'Facebook', url: 'https://facebook.com/newyorkdairy', icon: 'facebook' },
+    { name: 'Twitter', url: 'https://twitter.com/newyorkdairy', icon: 'twitter' },
+    { name: 'Instagram', url: 'https://instagram.com/newyorkdairy', icon: 'instagram' },
+    { name: 'Pinterest', url: 'https://pinterest.com/newyorkdairy', icon: 'pinterest' }
+  ];
 
   return (
     <footer className="bg-green-900 text-white">
