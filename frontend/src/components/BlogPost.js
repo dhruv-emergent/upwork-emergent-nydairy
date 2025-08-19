@@ -191,6 +191,20 @@ const BlogPost = () => {
           src={blog.image_url} 
           alt={blog.title}
           className="w-full h-full object-cover opacity-60"
+          onError={(e) => {
+            console.log('Blog header image failed to load, using fallback');
+            e.target.style.display = 'none';
+            e.target.parentElement.innerHTML = `
+              <div class="absolute inset-0 bg-gradient-to-r from-green-800 to-green-600 flex items-center justify-center">
+                <div class="text-center text-white">
+                  <div class="text-8xl mb-4">🥛</div>
+                  <p class="text-2xl font-bold">New York Dairy Co.</p>
+                  <p class="text-lg opacity-90">Farm Fresh Stories</p>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-green-900/50 to-transparent"></div>
+            `;
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-green-900/50 to-transparent"></div>
       </div>
