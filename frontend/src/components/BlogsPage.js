@@ -142,16 +142,19 @@ const BlogsPage = () => {
             Subscribe to our newsletter for the latest blog posts, seasonal recipes, 
             and updates from New York Dairy Co.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <form onSubmit={handleNewsletterSignup} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input 
               type="email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
+              required
               className="flex-1 px-6 py-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
             />
-            <button className="btn-primary px-8">
-              Subscribe
+            <button type="submit" className="btn-primary px-8">
+              {subscribed ? '✓ Subscribed!' : 'Subscribe'}
             </button>
-          </div>
+          </form>
           <p className="text-sm text-gray-500 mt-4">
             We respect your privacy and never share your information.
           </p>
