@@ -145,8 +145,10 @@ const HomePage = () => {
                     alt={feature.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
+                      // Fallback to a solid color background with icon
                       e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = `<div class="w-full h-full flex items-center justify-center bg-green-200"><div class="text-center"><div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4"><svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div><p class="text-green-800 font-semibold">${feature.title}</p></div></div>`;
+                      e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
+                      e.target.parentElement.innerHTML = `<div class="text-center"><div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4"><svg class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div></div>`;
                     }}
                   />
                 </div>
