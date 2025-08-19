@@ -196,9 +196,14 @@ const HomePage = () => {
             <div className="relative">
               <div className="blog-image">
                 <img 
-                  src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=600&h=400&fit=crop" 
+                  src="https://picsum.photos/600/400?random=20" 
                   alt="Jersey cows grazing in New York pastures with farm buildings in background"
                   className="rounded-2xl shadow-2xl w-full h-auto"
+                  onError={(e) => {
+                    // Fallback to a solid background with text if image fails
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = '<div class="rounded-2xl shadow-2xl w-full h-96 bg-gradient-to-br from-green-200 to-green-400 flex items-center justify-center"><div class="text-center text-green-800"><div class="text-6xl mb-4">🐄</div><p class="text-xl font-semibold">Our Dairy Farm</p><p class="text-lg">New York Pastures</p></div></div>';
+                  }}
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-green-200 rounded-full blur-xl opacity-60"></div>
