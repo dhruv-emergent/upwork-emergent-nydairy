@@ -70,7 +70,7 @@ const HomePage = () => {
       <section className="hero-section min-h-screen flex items-center justify-center text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&h=1080" 
+            src="https://picsum.photos/1920/1080?random=10" 
             alt="New York dairy farm with cows in green pastures"
             className="w-full h-full object-cover"
             onError={(e) => {
