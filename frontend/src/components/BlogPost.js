@@ -226,14 +226,25 @@ const BlogPost = () => {
             <div className="flex items-center space-x-4">
               <button 
                 onClick={handleShare}
-                className="flex items-center text-gray-500 hover:text-green-600 transition-colors"
+                className={`flex items-center transition-colors ${
+                  isShared 
+                    ? 'text-green-600' 
+                    : 'text-gray-500 hover:text-green-600'
+                }`}
               >
                 <ShareIcon className="h-5 w-5 mr-1" />
-                Share
+                {isShared ? 'Shared!' : 'Share'}
               </button>
-              <button className="flex items-center text-gray-500 hover:text-red-500 transition-colors">
-                <HeartIcon className="h-5 w-5 mr-1" />
-                Save
+              <button 
+                onClick={handleSave}
+                className={`flex items-center transition-colors ${
+                  isSaved 
+                    ? 'text-red-600' 
+                    : 'text-gray-500 hover:text-red-500'
+                }`}
+              >
+                <HeartIcon className={`h-5 w-5 mr-1 ${isSaved ? 'fill-current' : ''}`} />
+                {isSaved ? 'Saved' : 'Save'}
               </button>
             </div>
           </div>
