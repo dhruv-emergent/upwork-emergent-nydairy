@@ -144,7 +144,10 @@ const Footer = () => {
               
               <div className="flex items-center space-x-3">
                 <EnvelopeIcon className="h-5 w-5 text-green-400 flex-shrink-0" />
-                <a href="mailto:hello@newyorkdairy.co" className="text-green-200 hover:text-white transition-colors">
+                <a 
+                  href="mailto:hello@newyorkdairy.co" 
+                  className="text-green-200 hover:text-white transition-colors"
+                >
                   hello@newyorkdairy.co
                 </a>
               </div>
