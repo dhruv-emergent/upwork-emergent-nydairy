@@ -43,7 +43,7 @@ const HomePage = () => {
   };
 
   const handleCallUs = () => {
-    window.open('tel:+16075556455', '_self');
+    window.location.href = 'tel:+16075556455';
   };
 
   const handleNewsletterSignup = (e) => {
