@@ -1,1 +1,5 @@
+# API routes should go to backend
+/api/*  http://localhost:8001/api/:splat  200
+
+# All other routes should serve the React app
 /*    /index.html   200
