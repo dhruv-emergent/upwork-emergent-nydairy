@@ -11,19 +11,19 @@ const HomePage = () => {
       icon: HeartIcon,
       title: 'Farm Fresh Quality',
       description: 'Our milk travels from pasture to your table within 24-48 hours, ensuring maximum freshness and nutritional value.',
-      image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=300&fit=crop'
+      image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300'
     },
     {
       icon: ShieldCheckIcon,
       title: 'Sustainable Practices',
       description: 'We use regenerative farming methods that improve soil health and sequester carbon while producing exceptional dairy.',
-      image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=400&h=300&fit=crop'
+      image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300'
     },
     {
       icon: SunIcon,
       title: 'Seasonal Variations',
       description: 'Experience the natural rhythm of farming with dairy products that reflect what our cows eat throughout the seasons.',
-      image: 'https://images.unsplash.com/photo-1549221987-b352cac6d5b4?w=400&h=300&fit=crop'
+      image: 'https://images.unsplash.com/photo-1549221987-b352cac6d5b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300'
     }
   ];
 
