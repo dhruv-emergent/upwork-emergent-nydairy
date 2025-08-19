@@ -87,17 +87,16 @@ const Navbar = () => {
           <div className="md:hidden py-4 border-t">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  to={item.href}
-                  className={`nav-link ${isActive(item.href) ? 'active' : ''} px-4 py-2`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
+                  className={`nav-link ${isActive(item.href) ? 'active' : ''} px-4 py-2 text-left`}
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
               <div className="px-4 pt-2">
-                <button className="btn-primary w-full">
+                <button onClick={handleVisitStore} className="btn-primary w-full">
                   Visit Farm Store
                 </button>
               </div>
