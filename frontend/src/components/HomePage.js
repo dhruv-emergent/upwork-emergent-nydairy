@@ -70,9 +70,13 @@ const HomePage = () => {
       <section className="hero-section min-h-screen flex items-center justify-center text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1920&h=1080&fit=crop" 
+            src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&h=1080" 
             alt="New York dairy farm with cows in green pastures"
             className="w-full h-full object-cover"
+            onError={(e) => {
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.background = 'linear-gradient(135deg, #065f46 0%, #10b981 100%)';
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 to-green-600/60"></div>
         </div>
