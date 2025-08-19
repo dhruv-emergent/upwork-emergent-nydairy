@@ -134,7 +134,10 @@ const Footer = () => {
               
               <div className="flex items-center space-x-3">
                 <PhoneIcon className="h-5 w-5 text-green-400 flex-shrink-0" />
-                <a href="tel:607-555-6455" className="text-green-200 hover:text-white transition-colors">
+                <a 
+                  href="tel:+16075556455" 
+                  className="text-green-200 hover:text-white transition-colors"
+                >
                   (607) 555-MILK
                 </a>
               </div>
