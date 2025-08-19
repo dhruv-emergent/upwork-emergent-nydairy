@@ -94,13 +94,24 @@ const Navbar = () => {
           <div className="md:hidden py-4 border-t">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className={`nav-link ${isActive(item.href) ? 'active' : ''} px-4 py-2 text-left`}
-                >
-                  {item.name}
-                </button>
+                item.href.startsWith('#') ? (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavClick(item.href)}
+                    className={`nav-link ${isActive(item.href) ? 'active' : ''} px-4 py-2 text-left`}
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`nav-link ${isActive(item.href) ? 'active' : ''} px-4 py-2`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <div className="px-4 pt-2">
                 <button onClick={handleVisitStore} className="btn-primary w-full">
