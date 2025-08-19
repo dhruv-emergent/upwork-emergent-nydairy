@@ -54,15 +54,15 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className={`nav-link ${isActive(item.href) ? 'active' : ''}`}
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
-            <button className="btn-primary">
+            <button onClick={handleVisitStore} className="btn-primary">
               Visit Farm Store
             </button>
           </div>
