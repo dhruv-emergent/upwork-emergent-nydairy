@@ -140,7 +140,28 @@ class DairyAPITester:
             print("   No tags found")
             return False
 
+        # Validate image URL - CRITICAL for the fix
+        if 'image_url' not in data or not data['image_url']:
+            print("   Missing or empty image_url field")
+            return False
+        
+        image_url = data['image_url']
+        if not image_url.startswith('https://picsum.photos/'):
+            print(f"   Image URL should use Picsum, got: {image_url}")
+            return False
+        
+        # Special check for seasonal-dairy-recipes
+        if blog_id == 'seasonal-dairy-recipes':
+            expected_url = 'https://picsum.photos/800/600?random=105'
+            if image_url != expected_url:
+                print(f"   Seasonal dairy recipes image URL mismatch:")
+                print(f"   Expected: {expected_url}")
+                print(f"   Got: {image_url}")
+                return False
+            print(f"   ✅ Seasonal dairy recipes has correct Picsum URL: {image_url}")
+
         print(f"   Title: {data['title']}")
+        print(f"   Image URL: {image_url}")
         print(f"   Content length: {len(data['content'])} characters")
         print(f"   Tags: {', '.join(data['tags'])}")
         print(f"   Reading time: {data['reading_time']}")
