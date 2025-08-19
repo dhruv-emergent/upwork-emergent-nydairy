@@ -6,6 +6,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  const navigation = [
+    { name: 'Home', href: '/' },
+    { name: 'Our Story', href: '#about' },
+    { name: 'Blog', href: '/blogs' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
   const handleNavClick = (href) => {
     if (href.startsWith('#')) {
       // Scroll to section
